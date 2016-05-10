@@ -1,0 +1,24 @@
+{
+  "modulemasters" : [
+    {
+      "name" : "Hannah Springer",
+      "bio" : "sprin191",
+      "url" : "./assets/images/hannah.jpg"
+    },
+    {
+      "name" : "Glydewell Burdick",
+      "bio" : "glydeb",
+      "url" : "./assets/images/glyde.jpg"
+    },
+    {
+      "name" : "Tracey Zavadil",
+      "bio" : "Shinybirdy",
+      "url" : "./assets/images/tracey.jpg"
+    },
+    {
+      "name" : "Anthony Peloza",
+      "bio" : "apeloza",
+      "url" : "./assets/images/anthony.jpg"
+    }
+  ]
+}
