@@ -6,7 +6,7 @@ $(document).ready(function(){
 //The data is fetched and then an event listener is created
 getBios();
 $('.col-md-3').on('click','.btn', addLikes);
-
+$('.easteregg').on('click', rickAstley);
 });
 
 //This function fetches the information and puts it on the DOM.
@@ -47,4 +47,8 @@ function addLikes() {
       }
     }
   });
+}
+//Does what it says
+function rickAstley(){
+$('body').addClass('astley');
 }

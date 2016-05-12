@@ -21,3 +21,8 @@ h1 {
 .bio {
   height:100px;
 }
+
+.astley{
+  background-image: url('../images/rastley.gif');
+  background-size: cover;
+}
