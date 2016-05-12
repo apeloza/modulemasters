@@ -29,7 +29,7 @@ $.ajax({
 
 //This function adds likes to the server data and appends it to the DOM.
 function addLikes() {
-  console.log('Event listener start');
+
   var name = $(this).parent().attr('id');
   var button = $(this);
   $.ajax({
@@ -38,11 +38,11 @@ function addLikes() {
     success: function(count) {
 
       if (button.parent().children().hasClass('likes')) {
-        console.log("if");
+
         button.parent().find('.likes').text(count.likes);
 
       } else {
-        console.log("else");
+
         button.closest('.col-md-3').append('<p class = "likes">' + count.likes + '</p>');
       }
     }
