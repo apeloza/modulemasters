@@ -3,7 +3,8 @@ $(document).ready(function(){
 
 getBios();
 $('body').append(biosArray);
-console.log(biosArray);
+$('.col-md-3').on('click','.btn', addLikes);
+
 });
 
 function getBios(){
@@ -11,11 +12,35 @@ $.ajax({
   type: 'GET',
   url: '/bios',
   success: function(bios){
-    console.log(bios);
-    biosArray = bios;
-    $('.namecontainer').text(biosArray.modulemasters[0].name);
-    console.log("It worked" + biosArray);
+    biosArray = bios.modulemasters;
+
+    for(i = 0; i < biosArray.length; i++){
+      $('.person' + i).append('<p class = "name">' + biosArray[i].name + '</p>');
+      $('.person' + i).append('<p>' + biosArray[i].bio + '</p>');
+      $('.person' + i).append('<img src ="' + biosArray[i].url + '"/>');
+      $('.person' + i).append('<button class = "btn btn-default">Like Me!</button>');
+    }
   }
 });
+}
 
+function addLikes() {
+  console.log('Event listener start');
+  var name = $(this).parent().attr('id');
+  var button = $(this);
+  $.ajax({
+    type: 'POST',
+    url: '/likes/' + name,
+    success: function(count) {
+
+      if (button.parent().children().hasClass('likes')) {
+        console.log("if");
+        button.parent().find('.likes').text(count.likes);
+
+      } else {
+        console.log("else");
+        button.closest('.col-md-3').append('<p class = "likes">' + count.likes + '</p>');
+      }
+    }
+  });
 }

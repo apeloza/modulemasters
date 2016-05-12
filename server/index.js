@@ -3,6 +3,10 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var bios = require('./public/bios/modulemasters');
+var hannah = 0;
+var glyde = 0;
+var tracey = 0;
+var anthony = 0;
 
 app.set('port', 3000);
 
@@ -10,6 +14,26 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/bios', function(req, res){
 res.send(bios);
+});
+
+app.post('/likes/hannah', function(req,res) {
+  hannah++;
+  res.send({ "likes": hannah });
+});
+
+app.post('/likes/glyde', function(req,res) {
+  glyde++;
+  res.send({ "likes": glyde });
+});
+
+app.post('/likes/tracey', function(req,res) {
+  tracey++;
+  res.send({ "likes": tracey });
+});
+
+app.post('/likes/anthony', function(req,res) {
+  anthony++;
+  res.send({ "likes": anthony });
 });
 
 app.get('/*', function(req, res) {
