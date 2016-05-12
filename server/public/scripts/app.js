@@ -50,5 +50,5 @@ function addLikes() {
 }
 //Does what it says
 function rickAstley(){
-$('body').addClass('astley');
+$('body').toggleClass('astley');
 }
