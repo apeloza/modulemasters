@@ -18,8 +18,8 @@ $.ajax({
     biosArray = bios.modulemasters;
 
     for(i = 0; i < biosArray.length; i++){
-      $('.person' + i).append('<p class = "name">' + biosArray[i].name + '</p>');
-      $('.person' + i).append('<p>' + biosArray[i].bio + '</p>');
+      $('.person' + i).append('<h2 class = "name">' + biosArray[i].name + '</h2>');
+      $('.person' + i).append('<p class="bio">' + biosArray[i].bio + '</p>');
       $('.person' + i).append('<img src ="' + biosArray[i].url + '"/>');
       $('.person' + i).append('<button class = "btn btn-default">Like Me!</button>');
     }
@@ -39,11 +39,11 @@ function addLikes() {
 
       if (button.parent().children().hasClass('likes')) {
 
-        button.parent().find('.likes').text(count.likes);
+        button.parent().find('.likes').text('Likes: ' + count.likes);
 
       } else {
 
-        button.closest('.col-md-3').append('<p class = "likes">' + count.likes + '</p>');
+        button.closest('.col-md-3').append('<p class = "likes">Likes: ' + count.likes + '</p>');
       }
     }
   });
