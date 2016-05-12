@@ -1,12 +1,15 @@
+
+//biosArray stores the data to be displayed
 var biosArray;
 $(document).ready(function(){
 
+//The data is fetched and then an event listener is created
 getBios();
-$('body').append(biosArray);
 $('.col-md-3').on('click','.btn', addLikes);
 
 });
 
+//This function fetches the information and puts it on the DOM.
 function getBios(){
 $.ajax({
   type: 'GET',
@@ -24,6 +27,7 @@ $.ajax({
 });
 }
 
+//This function adds likes to the server data and appends it to the DOM.
 function addLikes() {
   console.log('Event listener start');
   var name = $(this).parent().attr('id');
